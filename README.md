@@ -1,36 +1,36 @@
-# Bulb Mart 🛒🔥
-### Ultra-High Performance E-Commerce Frontend Architecture for Low-Bandwidth Environments
+# Bulb Mart 🛒💡
+### Specialized Cross-Platform E-Commerce Mobile Application for Lighting & Industrial Bulbs
 
-Bulb Mart is a modular, enterprise-scale e-commerce frontend system engineered to deliver lightning-fast digital retail interfaces. The system is designed to provide zero-latency shopping configurations under severe global network constraints.
+Bulb Mart is a modular, high-performance mobile application engineered natively for iOS and Android platforms to handle full-cycle e-commerce retail workflows for specialized lighting fixtures and bulbs. 
 
-The project sets an industry benchmark for frontend optimization, achieving an elite performance tier under rigorous web metric monitoring frameworks.
+The architecture is built from the ground up using React Native, designed to manage complex product catalogs, multi-variant item configurations (wattage, lumens, base types), real-time inventory checks, and mobile-native payment collections seamlessly.
 
 ---
 
 ## ⚡ Key Architectural Capabilities
 
-*   **98% Lighthouse Performance Score:** Elite mobile-first interface compilation hitting maximum marks across performance, accessibility, best practices, and SEO.
-*   **Low-Bandwidth Optimization Paths:** Engineered explicitly to reduce time-to-first-byte (TTFB) and main-thread execution costs for mobile shoppers on unstable connections.
-*   **Advanced Global State Orchestration:** Utilizes a highly structured Redux Toolkit layout to cleanly synchronize multi-category carts, product variants, and pricing tiers instantly.
-*   **WCAG 2.1 AA Compliance:** Native, completely accessible structural layouts ensuring seamless assistive technology performance across all retail interfaces.
+*   **Native E-Commerce Core:** Full-featured marketplace pipeline including dynamic category filtering, persistent shopping cart tracking, and secure mobile checkout screens.
+*   **Intelligent Multi-Variant Matrices:** Engineered dynamic state handlers capable of resolving highly specific industrial bulb configurations (voltage constraints, color temperatures, fitting types) in real-time.
+*   **Advanced Global State Orchestration:** Utilizes Redux Toolkit to cleanly synchronize asynchronous app states, cart updates, and user profile data natively across layout trees.
+*   **Low-Latency View Port Rendering:** Highly optimized component structures that prevent UI frame drops on lower-end mobile devices during rapid grid scrolling of heavy graphics catalogs.
 
 ---
 
 ## 🏗️ Technical Stack & System Infrastructure
 
-*   **Core UI Architecture:** React, Next.js (Optimized Core Client Modules)
-*   **State & Interaction Layer:** Redux Toolkit, Hooks Architecture
-*   **Styling Engine:** Tailwind CSS, Mobile-First Fluid Grid Blueprints
-*   **Optimization Matrix:** Webpack Bundle Analyzer, Programmatic Code Splitting
+*   **Mobile Core Framework:** React Native, JavaScript (ES6+), TypeScript
+*   **State & Cache Layer:** Redux Toolkit, Asynchronous Local Storage Bridging
+*   **UI Engine & Navigation:** React Navigation (Native Stack Protocols), Custom Core Components
+*   **Data Backplane:** Supabase Data Layer, PostgreSQL, Secure Native Payment Gateway APIs
 
 ---
 
 ## 🛠️ Solved Engineering Bottlenecks
 
-### 1. Hard-Scaling Frontend Performance to a 98% Lighthouse Score
-*   **Challenge:** Massive image assets from heavy vendor retail catalogs and multi-level product bundles severely delayed large structural paint states, bloating bundle sizes.
-*   **Solution:** Implemented aggressive programmatic code splitting and strict lazy-loading protocols across the entire asset tree. Images are routed through custom asset pipelines that serve highly compressed web formats mapped precisely to the user's view criteria, cutting main-thread execution loads to a minimum.
+### 1. Eliminating Core Frame Drops During Rapid Catalog Grid Scrolling
+*   **Challenge:** Rendering large, multi-vendor asset lists of specialized light bulb inventories with heavy high-resolution media previews caused thread blockages and layout stuttering on budget mobile screens.
+*   **Solution:** Implemented aggressive structural virtualized list strategies (`FlatList` rendering optimizations) combined with dynamic mobile asset compression hooks. UI layouts decouple primary layout items from hidden structural variables, ensuring that off-screen card instances drop out of active device layout arrays immediately, keeping rendering processing speeds light.
 
-### 2. Preventing Multi-Variant State Desynchronization
-*   **Challenge:** Rapid changes to items with multiple configurations (size, layout, color options) often caused layout calculation issues or cart calculation lag.
-*   **Solution:** Structured an immutable, centralized state architecture within Redux Toolkit. By processing product combinations through standardized pure-reducer patterns, state transitions map across the interface instantaneously with zero thread blockages.
+### 2. Preventing Variant State Desynchronization across Mobile Screens
+*   **Challenge:** When users toggled multiple industrial choices (e.g., changing a bulb fitting from E27 to GU10, adjusting wattage values, and updating quantities), fast UI screen switches occasionally caused local device cart views to retain wrong calculations.
+*   **Solution:** Built an absolute single-source-of-truth state container inside Redux Toolkit. Variant updates flow through normalized, pure-reducer patterns that instantly push calculated state properties into local device states and database hooks, preventing layout execution mismatches across native views.
