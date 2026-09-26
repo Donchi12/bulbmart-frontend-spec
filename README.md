@@ -1,36 +1,56 @@
-# Bulb Mart 🛒💡
-### Specialized Cross-Platform E-Commerce Mobile Application for Lighting & Industrial Bulbs
+# Bulb Mart
 
-Bulb Mart is a modular, high-performance mobile application engineered natively for iOS and Android platforms to handle full-cycle e-commerce retail workflows for specialized lighting fixtures and bulbs. 
+### React Native E-Commerce Application — Architecture Case Study
 
-The architecture is built from the ground up using React Native, designed to manage complex product catalogs, multi-variant item configurations (wattage, lumens, base types), real-time inventory checks, and mobile-native payment collections seamlessly.
+Bulb Mart is a mobile e-commerce application for lighting products and bulbs. The product covers catalog browsing, product variants, cart flows and checkout-oriented interactions.
 
----
+The production source is private. This repository documents the frontend engineering approach.
 
-## ⚡ Key Architectural Capabilities
+## Core Stack
 
-*   **Native E-Commerce Core:** Full-featured marketplace pipeline including dynamic category filtering, persistent shopping cart tracking, and secure mobile checkout screens.
-*   **Intelligent Multi-Variant Matrices:** Engineered dynamic state handlers capable of resolving highly specific industrial bulb configurations (voltage constraints, color temperatures, fitting types) in real-time.
-*   **Advanced Global State Orchestration:** Utilizes Redux Toolkit to cleanly synchronize asynchronous app states, cart updates, and user profile data natively across layout trees.
-*   **Low-Latency View Port Rendering:** Highly optimized component structures that prevent UI frame drops on lower-end mobile devices during rapid grid scrolling of heavy graphics catalogs.
+**Mobile:** React Native  
+**Language:** TypeScript, JavaScript  
+**State:** Redux Toolkit  
+**Navigation:** React Navigation  
+**Backend:** Supabase / PostgreSQL  
+**Storage:** Local device storage  
+**Payments:** Native payment gateway integration
 
----
+## Engineering Challenges
 
-## 🏗️ Technical Stack & System Infrastructure
+### Product variants
 
-*   **Mobile Core Framework:** React Native, JavaScript (ES6+), TypeScript
-*   **State & Cache Layer:** Redux Toolkit, Asynchronous Local Storage Bridging
-*   **UI Engine & Navigation:** React Navigation (Native Stack Protocols), Custom Core Components
-*   **Data Backplane:** Supabase Data Layer, PostgreSQL, Secure Native Payment Gateway APIs
+Lighting products can have multiple attributes such as wattage, fitting type, voltage and color temperature. The frontend uses normalized variant state so selections remain consistent through the cart flow.
 
----
+### Catalog rendering
 
-## 🛠️ Solved Engineering Bottlenecks
+Image-heavy product catalogs require careful list rendering and asset loading. Virtualized lists and appropriate image-loading strategies help limit unnecessary work for off-screen content.
 
-### 1. Eliminating Core Frame Drops During Rapid Catalog Grid Scrolling
-*   **Challenge:** Rendering large, multi-vendor asset lists of specialized light bulb inventories with heavy high-resolution media previews caused thread blockages and layout stuttering on budget mobile screens.
-*   **Solution:** Implemented aggressive structural virtualized list strategies (`FlatList` rendering optimizations) combined with dynamic mobile asset compression hooks. UI layouts decouple primary layout items from hidden structural variables, ensuring that off-screen card instances drop out of active device layout arrays immediately, keeping rendering processing speeds light.
+### Cart state
 
-### 2. Preventing Variant State Desynchronization across Mobile Screens
-*   **Challenge:** When users toggled multiple industrial choices (e.g., changing a bulb fitting from E27 to GU10, adjusting wattage values, and updating quantities), fast UI screen switches occasionally caused local device cart views to retain wrong calculations.
-*   **Solution:** Built an absolute single-source-of-truth state container inside Redux Toolkit. Variant updates flow through normalized, pure-reducer patterns that instantly push calculated state properties into local device states and database hooks, preventing layout execution mismatches across native views.
+Cart calculations and product selections need a single source of truth. Redux Toolkit provides a centralized state model for quantities, variants and derived cart information.
+
+### Mobile network conditions
+
+Mobile users may experience variable network quality. Local state and cached data can keep selected interactions responsive when connectivity is inconsistent.
+
+## Simplified Flow
+
+```text
+Catalog
+  ↓
+Product
+  ↓
+Variant Selection
+  ↓
+Normalized Cart State
+  ↓
+Checkout
+  ↓
+Payment / Order API
+```
+
+## Private Production Code
+
+The production source is private. This public case study focuses on frontend architecture and engineering decisions.
+
